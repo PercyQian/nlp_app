@@ -1,13 +1,15 @@
-mkdir -p ~/.streamlit/
+#!/usr/bin/env bash
 
-echo "\
-[general]\n\
-email = \"cxq91@case.edu\"\n\
-" > ~/.streamlit/credentials.toml
+mkdir -p ~/.streamlit
 
-echo "\
-[server]\n\
-headless = true\n\
-enableCORS=false\n\
-port = \$PORT\n\
-" > ~/.streamlit/config.toml
+cat > ~/.streamlit/credentials.toml <<EOF
+[general]
+email = "your_heroku@email_id.com"
+EOF
+
+cat > ~/.streamlit/config.toml <<EOF
+[server]
+headless = true
+enableCORS = false
+port = ${PORT}
+EOF
